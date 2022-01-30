@@ -45,7 +45,7 @@ export default function App() {
             //   )
           }
           
-          document.getElementById('card').innerHTML = '<tr><th>Search Results: </th></tr>';
+          document.getElementById('card').innerHTML = '<tr><th colspan=2>Search Results: </th></tr>';
             for(i = 0; i < response.data.results.length; i++)
           {
             document
@@ -79,11 +79,11 @@ export default function App() {
 
   // To reset the input field, but HTML 5 already provides input type='search'
   // with a clear button, so no need to use this function.
-  // function clear(){
-  //   console.log("Start");
-  //   document.getElementById('getInput').value = '';
-  //   console.log("End");
-  // }
+  function clear(){
+    // console.log("Start");
+    document.getElementById('getInput').value = '';
+    // console.log("End");
+  }
       
   return (
     
@@ -91,13 +91,14 @@ export default function App() {
       <h2>It's all about anime!</h2>
 
         <input type='search' id='getInput' placeholder='Search...'/>
+        <button onClick={clear} className='clrbtn'>&times;</button>
 
         {/* <select id='getType'>
         <option value='Japanese Dub'>Japanese Dub</option>
         <option value='English Sub'>English Sub</option>
         </select> */}
 
-        <button onClick={display}>Search</button>
+        <button className='srcbtn' onClick={display}>Search</button>
 
         <table border='1'>
           <thead>

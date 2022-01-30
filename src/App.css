@@ -1,6 +1,42 @@
 .App {
   text-align: center;
 }
+input{
+  padding: 10px;
+  color: white;
+  background-color: black;
+  border-radius: 50px 50px 50px 50px;
+  border: none;
+  text-transform: capitalize;
+  transition-duration: 0.4s;
+}
+.clrbtn{
+  padding: 10px;
+  border-radius: 50px 0 0 50px;
+  color: white;
+  background-color: black;
+  border: none;
+  text-transform: capitalize;
+  transition-duration: 0.4s;
+}
+.clrbtn:hover{
+  background-color: red;
+}
+.srcbtn{
+  border-radius: 0 50px 50px 0;
+  padding: 10px;
+  color: white;
+  background-color: black;
+  border: none;
+  text-transform: capitalize;
+  transition-duration: 0.4s;;
+  width: 10%;
+}
+input:focus, .srcbtn:hover{
+  background-color: lightgrey;
+  color: black;
+}
+
 table{
   margin: auto;
 }
@@ -8,6 +44,9 @@ td, th{
   /* background-color: green;
   border-radius: 15px; */
   padding: 25px;
+}
+th{
+  font-size: xx-large;
 }
 img{
   transition-duration: 0.4s;
