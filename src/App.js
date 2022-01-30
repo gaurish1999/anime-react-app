@@ -79,19 +79,23 @@ export default function App() {
 
   // To reset the input field, but HTML 5 already provides input type='search'
   // with a clear button, so no need to use this function.
-  function clear(){
+  // function clear(){
     // console.log("Start");
-    document.getElementById('getInput').value = '';
+    // document.getElementById('getInput').value = '';
     // console.log("End");
-  }
+  // }
       
   return (
     
     <div className="App">
       <h2>It's all about anime!</h2>
 
+{/* Added Google Translator */}
+      <div id="google_translate_element"></div>
+
+
         <input type='search' id='getInput' placeholder='Search...'/>
-        <button onClick={clear} className='clrbtn'>&times;</button>
+        {/* <button onClick={clear} className='clrbtn'>&times;</button> */}
 
         {/* <select id='getType'>
         <option value='Japanese Dub'>Japanese Dub</option>
