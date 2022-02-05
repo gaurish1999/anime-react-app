@@ -1,0 +1,72 @@
+.App {
+  text-align: center;
+  
+}
+.cover{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  text-align: center;
+}
+.formdiv,.mainpage{
+  box-shadow: 15px 15px 15px #02427a;
+  border-radius: 5px;
+}
+.contactus{
+  margin: auto;
+}
+table{
+  margin: auto;
+  width: 100%;
+}
+td, th{
+  padding: 25px;
+}
+
+.col-md-8{
+  box-shadow: 5px 10px 15px black;
+  border-radius: 5px;
+}
+
+/* .mainbg{
+  background-image: linear-gradient(black, rgb(2, 2, 97), darkblue, blue, skyblue);
+  background-color: #93cdff;
+} */
+
+th{
+  font-size: xx-large;
+  background-color: #02427a  ;
+  color: white;
+}
+nav{
+  background-color: #02427a  ;
+  box-shadow: 0 0 15px black;
+}
+
+.scrollDiv{
+  max-height: 650px;
+  overflow-y: scroll;
+  color: white;
+  border-radius: 5px;
+  background-color: rgb(119, 119, 119);
+}
+.scrollDiv2{
+  /* max-height: 700px; */
+  overflow-y: scroll;
+  /* background-color: rgb(219, 219, 219); */
+}
+.srccard{
+  margin-top: auto;
+}
+
+img{
+  transition-duration: 0.3s;
+  border-radius: 1%;
+  box-shadow: 1px 2px 7px black;
+}
+img:hover{
+  
+  transform: scale(1.02);
+  cursor: pointer;
+}
