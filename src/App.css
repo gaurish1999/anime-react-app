@@ -29,7 +29,7 @@ input{
   background-color: black;
   border: none;
   text-transform: capitalize;
-  transition-duration: 0.4s;;
+  transition-duration: 0.4s;
   width: 10%;
 }
 input:focus, .srcbtn:hover{
