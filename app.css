@@ -24,8 +24,8 @@ td, th{
   padding: 25px;
 }
 
-.col-md-8{
-  box-shadow: 5px 10px 15px black;
+.col-md-10{
+  box-shadow: 5px 10px 15px #02427a;
   border-radius: 5px;
 }
 
@@ -45,11 +45,11 @@ nav{
 }
 
 .scrollDiv{
-  max-height: 650px;
-  overflow-y: scroll;
-  color: white;
+  /* max-height: 650px;
+  overflow-y: scroll; */
+  /* color: white; */
   border-radius: 5px;
-  background-color: rgb(119, 119, 119);
+  /* background-color: rgb(119, 119, 119); */
 }
 .scrollDiv2{
   /* max-height: 700px; */
@@ -62,11 +62,36 @@ nav{
 
 img{
   transition-duration: 0.3s;
+  height: 100%;
   border-radius: 1%;
   box-shadow: 1px 2px 7px black;
 }
 img:hover{
   
-  transform: scale(1.02);
+  transform: scale(1.1);
   cursor: pointer;
+}
+.resultinput{
+  border: none;
+  /* background-color: yellow; */
+  text-align: center;
+  border-radius: 5px;
+  padding: 1%;
+}
+.resultinput:hover{
+  cursor: not-allowed;
+}
+.details_searchresults{
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  align-items: right;
+  border-radius: 5px;
+  box-shadow: 1px 2px 7px #02427a;
+
+}
+.img_left_side, .details_right_side{
+  /* border-radius: 5px;
+  box-shadow: 1px 2px 7px #02427a; */
+  padding: 1%;
 }

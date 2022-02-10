@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 
+    <link rel='icon' href='logo.png'>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 
@@ -48,60 +49,61 @@
     <!-- Navbar Start---------------------------------------------------------------- -->
     <nav class="navbar navbar-expand-md navbar-dark sticky-top">
     
-    <!-- Brand  -->
-    <a class="navbar-brand" href="home.php"><i class="fab fa-autoprefixer">nimeL</i><i class="far fa-heart"></i>ve</a>
+      <!-- Brand  -->
+      <a class="navbar-brand" href="home.php"><i class="fab fa-autoprefixer">nimeL</i><i class="far fa-heart"></i>ve</a>
 
-    <!-- Toggler/collapsibe Button -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <!-- Toggler/collapsibe Button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <!-- Navbar links -->
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class="navbar-nav">
-        
+      <!-- Navbar links -->
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          
 
-        <li class="nav-item">
-          <a class="nav-link" href="contribute.php">Contribute</a>
-        </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contribute.php">Contribute</a>
+          </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="fav.php">My Favorites</a>
-        </li>
+          <li class="nav-item">
+            <a class="nav-link" href="fav.php">My Favorites</a>
+          </li>
 
-        <li class='nav-item'>
+          <li class='nav-item'>
 
-          <form class="form-inline d-flex justify-content-center">
+            <form class="form-inline d-flex justify-content-center">
 
-            <div class='input-group'>
+              <div class='input-group'>
 
-              <input class="form-control" type="search" id='getInput' placeholder="Search"/>
-              <div class='input-group-append'>
+                <input class="form-control" type="search" id='getInput' placeholder="Search"/>
+                <div class='input-group-append'>
 
-                <!-- <div onclick="clear()" class='btn btn-danger'>Clear</div> -->
+                  <!-- <div onclick="clear()" class='btn btn-danger'>Clear</div> -->
 
+                </div>
+
+                <div class="btn btn-success ml-2" onclick="display()">Search Anime</div>
               </div>
+              
+                  
+            </form>
 
-              <div class="btn btn-success ml-2" onclick="display()">Search Anime</div>
-            </div>
-            
-                
-          </form>
+          </li>
 
-        </li>
-
-      </ul>
-    </div>
-  </nav> 
+        </ul>
+      </div>
+    </nav> 
     <!-- Navbar End---------------------card------------------------------------------- -->
     
     <div class="cover">
             <div class='container-fluid'>
     
+              <!-- Add anime -->
               <div class='row p-4 '>
     
                 <!-- Form area -->
-                <div class='col-md-4 offset-md-4 bg-light p-5 formdiv'>
+                <div class='col-lg-4 offset-lg-4 bg-light p-5 formdiv'>
     
                         <form class='form-check' action='favdb.php' method="post">
                             
@@ -110,12 +112,12 @@
 
                             <div class="form-group">
                                 <label>Show title</label>
-                                <input type='text' name='showtitle' class='form-control' placeholder="e.g. Demon Slayer"/>
+                                <input type='text'value="<?php echo isset($_POST['showtitle']) ? $_POST['showtitle'] : '' ?>" name='showtitle' class='form-control' placeholder="e.g. Demon Slayer"/>
                             </div>
 
                             <div class='form-group'>
                                 <label>Version: </label>
-                                <select id='version' name='version'>
+                                <select id='version' name='version' class='form-control'>
                                     <option value='Japanese Sub'>Japanese Sub</option>
                                     <option value='English Dub'>English Dub</option>
                                     <option value='Both JP & ENG'>Both JP & ENG</option>
@@ -130,6 +132,28 @@
     
               </div>
     
+              <!-- Currently saved -->
+              <div class='row p-4 '>
+    
+                <!-- Form area -->
+                <div class='col-lg-8 offset-lg-2 bg-light p-5 formdiv'>
+    
+                        <!-- <form class='form-check' action='fav_anime_data.php' method="post"> -->
+                            
+                            <h3>Currently, the following is the list of <i class="fab fa-autoprefixer">nime that you L</i><i class="far fa-heart"></i>ve:</h3>
+                            <hr>
+                          
+                            <!-- <button class='btn btn-primary w-50' onclick="show_saved_anime()">Show me</button> -->
+
+                            <div id='saved_anime'>
+                                <?php include 'fav_anime_data.php' ?>
+                            </div>
+
+                        <!-- </form> -->
+                  
+                </div>
+    
+              </div>
             </div>
 
     </div>

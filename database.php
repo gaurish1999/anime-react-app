@@ -2,25 +2,31 @@
 
 require 'connection.php';
 
-echo "<br>Working! Let's Go<br/>";
+// echo "<br>Working! Let's Go<br/>";
+
 $title = $_POST["title"];
 $rating = $_POST["rating"];
-echo "Rating: " . $rating;
-echo "<br>Title: " . $title;
 
-// $sql = "INSERT INTO wishList (`name`, `rating`)
-// VALUES ('$title', '$rating');";
-$sql = "SELECT * FROM `wishList`";
+echo "You selected: <br/>Title: <b>" . $title . "</b>, Rating: <b>" . $rating . "/10</b><br/>";
 
-// if(mysqli_query($conn, $sql)){
-    // echo "<h3>Data added in the database.</h3>"; 
+$sql = "INSERT INTO wishList (`name`, `rating`)
+VALUES ('$title', $rating);";
 
-    $result = mysqli_query($conn, $sql);
-    echo "<table border='1' class='table table-striped table-hover text-center'>
-    <thead class='thead thead-dark'>
+$query = mysqli_query($conn, "SELECT * FROM `wishList`");
+
+// $tabledata = mysqli_fetch_array($query);
+
+if($query){
+    echo "<h3>Selected anime added in the database. You can <i>go back</i> and keep saving more!</h3>"; 
+    echo "<h3>Your wishlist (all except current input is shown):</h3>"; 
+
+    $result = $query;
+
+    echo "<table border='1'>
+    <thead>
         <tr>
 
-            <th>Id</th>
+            <th>S.No.</th>
             <th>Title</th>
             <th>Rating</th>
             
@@ -28,23 +34,40 @@ $sql = "SELECT * FROM `wishList`";
     </thead>
     ";
 
-    // Gets data of each row from DB table and puts in a variable named '$row'
-    while ($row = mysqli_fetch_assoc($result)) { // Important line !!! Check summary get row on array ..
+    while ($row = mysqli_fetch_assoc($result)) {
 
-        // Inputs value into each cell of table
         echo "<tr>";
-        foreach ($row as $field => $value) { // I you want you can right this line like this: foreach($row as $value) {
-            echo "<td style='text-align: center; padding: 15px;'>" . $value . "</td>"; // I just did not use "htmlspecialchars()" function. 
+        foreach ($row as $value) { 
+            echo "<td style='text-align: center; padding: 15px;'>" . $value . "</td>";
         }
 
         echo "</tr>";
     }
+
     echo "</table>";
-    // }
-    //  else{
-    // echo "<br/>ERROR: Uh oh! <br/><br/><i>$sql.</i><br/><br/> " 
-    //     . mysqli_error($conn);
-    // }
+
+    }
+     else{
+    echo "<br/>ERROR: Uh oh! <br/><br/><i>.$query.</i><br/><br/> " 
+        . mysqli_error($conn);
+    }
+
+    if ($conn -> multi_query($sql)) {
+        do {
+          
+          if ($result = $conn -> store_result()) {
+            while ($row = $result -> fetch_row()) {
+              printf("%s\n", $row[0]);
+            }
+           $result -> free_result();
+          }
+          // if there are more result-sets, the print a divider
+          if ($conn -> more_results()) {
+            printf("-------------\n");
+          }
+           //Prepare next result set
+        } while ($conn -> next_result());
+      }
 
 // Close connection
 mysqli_close($conn);

@@ -15,6 +15,8 @@ else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
   
+
+echo '<h1 style="text-align: center; padding: auto;">You can now go back to the previous page</h1>';
 $conn->close();
 
 ?>

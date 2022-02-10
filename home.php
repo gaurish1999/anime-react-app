@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel='icon' href='logo.png'>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
@@ -87,7 +89,7 @@
     
                       <div class='input-group'>
     
-                        <input class="form-control" type="search" id='getInput' placeholder="Search"/>
+                        <input class="form-control" type="search" id='getInput' name='getInput' <?php echo isset($_POST['getInput']) ? $_POST['getInput'] : '' ?> placeholder="Search"/>
                         <div class='input-group-append'>
 
                           <!-- <div onclick="clear()" class='btn btn-danger'>Clear</div> -->
@@ -117,12 +119,12 @@
               <div class='row p-5 mainbg srccard'>
 
                 <!-- Card area -->
-                <div class='col-md-8 offset-md-2 bg-light p-5'>
+                <div class='col-md-10 offset-md-1 bg-light p-5'>
     
-                     <div class='justify-content-center d-flex'>
+                     <div class='col-md-12'>
 
                      <!-- Search Result table -->
-                      <div class='scrollDiv' id="card">
+                      <div class='scrollDiv ' id="card">
         
                       </div>
 
