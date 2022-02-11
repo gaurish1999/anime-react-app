@@ -105,7 +105,7 @@
                 <!-- Form area -->
                 <div class='col-lg-4 offset-lg-4 bg-light p-5 formdiv'>
     
-                        <form class='form-check' action='favdb.php' method="post">
+                        <form class='form-check' action='favdb.php' method="post" target='_blank'>
                             
                             <h3>Enter which <i class="fab fa-autoprefixer">nime you L</i><i class="far fa-heart"></i>ve & it will be saved in the database!</h3>
                             <hr>

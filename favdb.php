@@ -10,13 +10,14 @@ $sql = "INSERT INTO `favs`(`showName`, `version`)
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
+    echo '<h1 style="text-align: center; padding: auto;">You can now go back to the previous page</h1>';
 }
 else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
   
 
-echo '<h1 style="text-align: center; padding: auto;">You can now go back to the previous page</h1>';
+
 $conn->close();
 
 ?>

@@ -49,57 +49,57 @@
     <!-- Navbar Start---------------------------------------------------------------- -->
     <nav class="navbar navbar-expand-md navbar-dark sticky-top">
     
-    <!-- Brand  -->
-    <a class="navbar-brand" href="home.php"><i class="fab fa-autoprefixer">nimeL</i><i class="far fa-heart"></i>ve</a>
+      <!-- Brand  -->
+      <a class="navbar-brand" href="home.php"><i class="fab fa-autoprefixer">nimeL</i><i class="far fa-heart"></i>ve</a>
 
-    <!-- Toggler/collapsibe Button -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <!-- Toggler/collapsibe Button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <!-- Navbar links -->
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class="navbar-nav">
-        
+      <!-- Navbar links -->
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          
 
-        <li class="nav-item">
-          <a class="nav-link" href="contribute.php">Contribute</a>
-        </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contribute.php">Contribute</a>
+          </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="fav.php">My Favorites</a>
-        </li>
+          <li class="nav-item">
+            <a class="nav-link" href="fav.php">My Favorites</a>
+          </li>
 
-        <li class='nav-item'>
+          <li class='nav-item'>
 
-          <form class="form-inline d-flex justify-content-center">
+            <form class="form-inline d-flex justify-content-center">
 
-            <div class='input-group'>
+              <div class='input-group'>
 
-              <input class="form-control" type="search" id='getInput' placeholder="Search"/>
-              <div class='input-group-append'>
+                <input class="form-control" type="search" id='getInput' placeholder="Search"/>
+                <div class='input-group-append'>
 
-                <!-- <div onclick="clear()" class='btn btn-danger'>Clear</div> -->
+                  <!-- <div onclick="clear()" class='btn btn-danger'>Clear</div> -->
 
+                </div>
+
+                <div class="btn btn-success ml-2" onclick="display()">Search Anime</div>
               </div>
+              
+                  
+            </form>
 
-              <div class="btn btn-success ml-2" onclick="display()">Search Anime</div>
-            </div>
-            
-                
-          </form>
+          </li>
 
-        </li>
-
-      </ul>
-    </div>
-  </nav> 
+        </ul>
+      </div>
+    </nav> 
     <!-- Navbar End---------------------card------------------------------------------- -->
     
     <div class="cover">
             <div class='container-fluid'>
     
-              <div class='row p-4 '>
+              <!-- <div class='row p-4 '> -->
     
                 <!-- Page message -->
                 <div class='form-group p-5 contactus'>
@@ -107,43 +107,44 @@
                 </div>
 
                 <!-- Form area -->
-                <div class='col-md-12 justify-content-center d-flex'>
+                <div class='col-lg-6 offset-lg-3 justify-content-center d-flex'>
                     
-                           
-                    <div class='col-md-4 bg-light p-5 formdiv'>
+                  
+                    <div class='col-lg-12 bg-light p-5 formdiv'>
         
-                            <form class='form-check' action='favdb.php' method="post">
-                                
+                            <!-- <form class='form-check' action='userdetails.php' method="post"> -->
+                            <form class='form-check' action='userdetails.php' method="post" target="_blank">        
+
                                 <div class="form-group">
                                     <label>Tell us how can you contribute</label>
-                                    <textarea rows='20' cols='40' name='contribute' class='form-control' placeholder="e.g. I know japanese and have cleared the JLPT N5 exam so, I am able to do basic translations. If you want to publish content from japanese sources, I can be useful to you."></textarea>
+                                    <textarea rows='5' cols='40' name='contribute' <?php echo isset($_POST['contribute']) ? $_POST['contribute'] : '' ?> class='form-control' placeholder="e.g. I know japanese and have cleared the JLPT N5 exam so, I am able to do basic translations. If you want to publish content from japanese sources, I can be useful to you."></textarea>
                                 </div>
 
                                 <!-- <button type='submit' value="Submit" class='btn btn-primary w-50'>Proceed for details</button> -->
 
-                            </form>
+                            <!-- </form> -->
                     
-                    </div>
+                    <!-- </div> -->
 
-                    <div class='col-md-4 bg-light p-5 ml-5 formdiv'>
+                    <!-- <div class=' bg-light p-5 formdiv'> -->
         
-                            <form class='form-check' action='favdb.php' method="post">
+                            
 
                                 <div class='form-group'>
                                     <label>Name</label>
-                                    <input type="text" name='inputName' value='' id='inputName' class='form-control' placeholder="Timothy">
+                                    <input type="text" name='inputName' value='' id='inputName' class='form-control' <?php echo isset($_POST['inputName']) ? $_POST['inputName'] : '' ?> placeholder="e.g. Keegan Michael Key">
                                 </div>
                                 
                                 <div class="form-group">
                                     <label>Email</label>
-                                    <input type='email' name='usermail' value='' id='usermail' class='form-control' placeholder="e.g. example@example.com"/>
+                                    <input type='email' name='usermail' value='' id='usermail' class='form-control' <?php echo isset($_POST['usermail']) ? $_POST['usermail'] : '' ?> placeholder="e.g. keyandpeele@comedycentral.com"/>
                                 </div>
                                     <hr>
 
                                 <div class='form-group'>
                                     <label>Mobile No.</label>
-                                    <input type='text' id='inputccode' value='' name='numcode' class='form-control' placeholder="e.g. 91 (for India)">
-                                    <input type='text' id='inputmobile' value='' name='mobnum' class='form-control' placeholder="e.g. 0000 111 222">
+                                    <input type='text' id='inputccode' value='' class='form-control' placeholder="e.g. 91 (for India)"><br/>
+                                    <input type='text' id='inputmobile' value='' name='mobnum' class='form-control' <?php echo isset($_POST['mobnum']) ? $_POST['mobnum'] : '' ?> placeholder="e.g. 0000 111 222">
                                     <div class='btn btn-primary mt-2' onclick="checknum()">Verify Number</div>
                                     <div id='showstatus'></div>
                                 </div>
@@ -151,16 +152,17 @@
                                     <hr>
                                 <div class='form-group'>
                                     <label>Occupation</label>
-                                    <input type='text' name='occupation' class='form-control' placeholder="e.g. working as 'this' at ABC Organisation">
+                                    <input type='text' name='occupation' class='form-control' <?php echo isset($_POST['occupation']) ? $_POST['occupation'] : '' ?> placeholder="e.g. Comedian at Comedy Central">
                                 </div>
 
-                                <button type='submit' value="Submit" class='btn btn-primary w-50 mt-5'>Proceed for details</button>
+                                <button type='submit' value="Submit" class='btn btn-primary w-50 mt-5'>Submit details</button>
 
-                            </form>
-                    
+                            
+                    </form>
                     </div>
+                  
                 </div>
-              </div>
+              <!-- </div> -->
     
             </div>
 
